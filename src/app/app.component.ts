@@ -1,10 +1,61 @@
 import { Component } from '@angular/core';
+import { BlobService, UploadConfig, UploadParams } from 'angular-azure-blob-service';
+import { Config } from './app.config';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'app';
+ /** The upload config */
+ config: UploadConfig;
+ /** The selected file */
+ currentFile: File;
+ /** The current percent to be displayed */
+ percent: number;
+ 
+ constructor (private blob: BlobService) {
+   this.currentFile = null;
+   this.config = null;
+   this.percent = 0;
+ }
+
+ updateFiles (files) {
+   this.currentFile = files[0];
+ }
+
+  upload () {
+    if (this.currentFile !== null) {
+      const baseUrl = this.blob.generateBlobUrl(Config, this.currentFile.name);
+      this.config = {
+        baseUrl: baseUrl,
+        sasToken: Config.sas,
+        file: this.currentFile,
+        complete: () => {
+          console.log('Transfer completed !');
+        },
+        error: () => {
+          console.log('Error !');
+        },
+        progress: (percent) => {
+          this.percent = percent;
+        }
+      };
+      this.blob.upload(this.config);
+
+    }
+  }
+
+
+
+
+
+
+
+
+
+  
 }
