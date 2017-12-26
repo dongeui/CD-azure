@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<input type=\"file\" #file (change)=\"updateFiles(file.files)\">\r\n<input type=\"button\" (click)=\"upload()\" value=\"Send\">\r\n<p *ngIf=\"percent > 0\">Progress: {{ percent }}%</p>\r\n\r\n <ul>\r\n  <li>\r\n    <h2><img height=\"150\" width=\"300\" src=\"https://dongeuistorage.blob.core.windows.net/blob/Chrysanthemum.jpg\"></h2>\r\n  </li>\r\n  <li>\r\n    <h2><img height=\"150\" width=\"300\" src=\"https://dongeuistorage.blob.core.windows.net/blob/Desert.jpg\"></h2>\r\n  </li>\r\n</ul> \r\n\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<input type=\"file\" #file (change)=\"updateFiles(file.files)\">\r\n<input type=\"button\" (click)=\"upload()\" value=\"Send\">\r\n<p *ngIf=\"percent > 0\">Progress: {{ percent }}%</p>\r\n\r\n <ul>\r\n  <li>\r\n    <h2><img height=\"150\" width=\"300\" src=\"https://dongeuistorage1.blob.core.windows.net/blob/Chrysanthemum.jpg\"></h2>\r\n  </li>\r\n  <li>\r\n    <h2><img height=\"150\" width=\"300\" src=\"https://dongeuistorage1.blob.core.windows.net/blob/Desert.jpg\"></h2>\r\n  </li>\r\n  <li>\r\n    <h2><img height=\"150\" width=\"300\" src=\"https://dongeuistorage1.blob.core.windows.net/blob/Desert.jpg\"></h2>\r\n  </li>\r\n</ul> \r\n\r\n"
 
 /***/ }),
 
@@ -115,9 +115,9 @@ var AppComponent = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Config; });
 var Config = {
-    sas: '?sv=2017-04-17&ss=b&srt=sco&sp=rwdlac&se=2017-12-26T23:59:59Z&st=2017-12-26T01:00:00Z&sip=192.168.15.1-192.168.15.10&spr=https,http&sig=yqRoBBu90ei4v7yGFTrmodi6B9wIUAJHGAfLyzNysL8%3D',
-    storageAccount: 'dongeuistorage',
-    containerName: 'blob'
+    sas: '?sv=2017-04-17&ss=bfqt&srt=sco&sp=rwdlacup&se=2017-12-26T12:00:00Z&st=2017-12-26T00:00:00Z&sip=192.168.15.1-192.168.15.10&spr=https,http&sig=jCgDMVb890vwvBqfBMpYpQBpGFNUInAlK%2Fhzfdu6DZ4%3D',
+    storageAccount: 'dongeuistorage1',
+    containerName: 'blob1'
 };
 
 
