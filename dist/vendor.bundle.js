@@ -70611,7 +70611,7 @@ var Extractor = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__ = __webpack_require__("../../../../rxjs/_esm5/operator/share.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__("../../../../rxjs/_esm5/Subject.js");
 /**
- * @license Angular v5.1.0
+ * @license Angular v5.1.1
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -71328,7 +71328,7 @@ var Version = /** @class */ (function () {
 /**
  * \@stable
  */
-var VERSION = new Version('5.1.0');
+var VERSION = new Version('5.1.1');
 
 /**
  * @fileoverview added by tsickle
@@ -72479,9 +72479,6 @@ var ReflectiveKey = /** @class */ (function () {
     });
     return ReflectiveKey;
 }());
-/**
- * \@internal
- */
 var KeyRegistry = /** @class */ (function () {
     function KeyRegistry() {
         this._allKeys = new Map();
@@ -75414,8 +75411,6 @@ function onLeave(zone) {
 /**
  * Provides a noop implementation of `NgZone` which does nothing. This zone requires explicit calls
  * to framework to perform rendering.
- *
- * \@internal
  */
 var NoopNgZone = /** @class */ (function () {
     function NoopNgZone() {
@@ -82214,9 +82209,13 @@ var ViewRef_ = /** @class */ (function () {
         if (fs.begin) {
             fs.begin();
         }
-        Services.checkAndUpdateView(this._view);
-        if (fs.end) {
-            fs.end();
+        try {
+            Services.checkAndUpdateView(this._view);
+        }
+        finally {
+            if (fs.end) {
+                fs.end();
+            }
         }
     };
     /**
